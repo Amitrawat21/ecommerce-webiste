@@ -1,0 +1,11 @@
+```gitignore
+# Environment variables
+.env
+.env.*
+
+# Allow example environment file
+!.env.example
+
+# Node modules
+node_modules/
+```
