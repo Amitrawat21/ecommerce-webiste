@@ -44,9 +44,9 @@ const EditProduct = () => {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '40px auto', background: '#18181b', padding: '40px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
-      <h2 style={{ color: '#f97316', marginBottom: '20px' }}>Edit Product</h2>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+    <div style={{ maxWidth: '600px', margin: '40px auto', background: '#30304e', padding: '40px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
+      <h2 style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff', marginBottom: '20px' }}>Edit Product</h2>
+      <form className="admin-product-form" onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
         <input type="text" placeholder="Product Name" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} style={inputStyle} />
         <textarea placeholder="Description" required rows="4" value={formData.description} onChange={(e) => setFormData({...formData, description: e.target.value})} style={inputStyle} />
         <input type="number" placeholder="Price" required value={formData.price} onChange={(e) => setFormData({...formData, price: e.target.value})} style={inputStyle} />
@@ -64,5 +64,5 @@ const EditProduct = () => {
   );
 };
 
-const inputStyle = { padding: '12px', background: '#09090b', border: '1px solid #27272a', borderRadius: '6px', color: '#fff', fontSize: '15px', outline: 'none' };
+const inputStyle = { padding: '12px', background: '#988bb7', border: '1px solid #27272a', borderRadius: '6px', color: '#fff', fontSize: '15px', outline: 'none' };
 export default EditProduct;

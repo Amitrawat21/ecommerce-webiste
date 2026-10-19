@@ -52,9 +52,9 @@ const AddProduct = () => {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '40px auto', background: '#18181b', padding: '40px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
+    <div style={{ maxWidth: '600px', margin: '40px auto', background: '#30304e', padding: '40px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
       <h2 style={{ color: '#f97316', marginBottom: '20px' }}>Add New Product</h2>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+      <form className="admin-product-form" onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
         <input 
           type="text" placeholder="Product Name" required 
           onChange={(e) => setFormData({...formData, name: e.target.value})} 
@@ -99,13 +99,13 @@ const AddProduct = () => {
 };
 
 const inputStyle = {
-  padding: '12px',
-  background: '#09090b',
-  border: '1px solid #27272a',
-  borderRadius: '6px',
-  color: '#fff',
-  fontSize: '15px',
-  outline: 'none'
+  padding: "12px",
+  background: "#988bb7",
+  border: "1px solid #27272a",
+  borderRadius: "6px",
+  color: "#fffdfd",
+  fontSize: "15px",
+  outline: "none",
 };
 
 export default AddProduct;

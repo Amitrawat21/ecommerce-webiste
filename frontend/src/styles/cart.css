@@ -127,8 +127,14 @@
 }
 
 /* Checkout Page Additions */
+.checkout-title {
+  color: #000;
+  background: none;
+  -webkit-text-fill-color: #000;
+}
+
 .checkout-content {
-  background: #18181b;
+  background: #52527a;
   padding: 40px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -144,10 +150,10 @@
 
 .shipping-form input {
   padding: 15px;
-  background: #09090b;
+  background: #e4e4ed;
   border: 1px solid #27272a;
   border-radius: 8px;
-  color: #fff;
+  color: #0c0a0a;
   font-size: 15px;
   outline: none;
 }

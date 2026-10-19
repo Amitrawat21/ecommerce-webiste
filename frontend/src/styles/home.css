@@ -1,0 +1,9 @@
+
+/* Mobile view */
+@media (max-width: 480px) {
+  .featured-products-title {
+    font-size: 30px;
+    white-space: nowrap;
+    margin-bottom: 16px;
+  }
+}

@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
+import { AuthContext } from '../context/AuthContext';
 import '../styles/product.css';
 
 const ProductDetail = () => {
@@ -9,6 +10,8 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -26,6 +29,11 @@ const ProductDetail = () => {
   }, [id]);
 
   const handleAddToCart = () => {
+    if (!user) {
+      navigate('/login');
+      return;
+    }
+
     if (product) {
       dispatch(addToCart({
         productId: product._id,
@@ -69,11 +77,13 @@ const ProductDetail = () => {
           </div>
 
           {/* Cart & Stock Actions */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-            <button onClick={handleAddToCart} className="btn" style={{ flexGrow: '1', padding: '18px', fontSize: '1.2rem' }}>
-              Add to Shopping Cart
-            </button>
-          </div>
+          {user?.role !== 'admin' && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+              <button onClick={handleAddToCart} className="btn" style={{ flexGrow: '1', padding: '18px', fontSize: '1.2rem' }}>
+                Add to Shopping Cart
+              </button>
+            </div>
+          )}
           
           <p style={{ marginTop: '20px', color: product.stock > 0 ? '#10b981' : '#ef4444', fontWeight: '600' }}>
             {product.stock > 0 ? `● In Stock (${product.stock} units available)` : `● Temporarily Out of Stock`}

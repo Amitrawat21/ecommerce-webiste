@@ -89,6 +89,12 @@ h2 {
   -webkit-text-fill-color: #000;
 }
 
+.admin-product-form input::placeholder,
+.admin-product-form textarea::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
 /* Smooth Fade In */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }

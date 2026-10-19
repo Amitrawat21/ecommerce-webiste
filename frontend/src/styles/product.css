@@ -149,6 +149,108 @@
   margin-bottom: 30px;
 }
 
+
+/* Mobile Responsive Design - Desktop CSS remains unchanged */
+@media (max-width: 600px) {
+
+  .product-detail-wrapper {
+    padding: 12px !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Breadcrumb navigation */
+  .product-detail-wrapper > div:first-child {
+    font-size: 12px !important;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+  }
+
+  /* Product layout */
+  .product-detail {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 16px;
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
+  }
+
+  /* Product image */
+  .detail-image-container {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .detail-image {
+    display: block;
+    width: 100%;
+    max-height: 320px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    box-sizing: border-box;
+  }
+
+  /* Product information */
+  .detail-info {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .detail-info h2 {
+    font-size: 1.6rem !important;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+    margin-bottom: 8px !important;
+  }
+
+  .detail-info .detail-price {
+    font-size: 1.7rem !important;
+    margin: 10px 0 18px !important;
+  }
+
+  .detail-info h4 {
+    font-size: 1rem;
+  }
+
+  .detail-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+
+  /* Add to cart button */
+  .detail-info .btn {
+    width: 100%;
+    min-width: 0;
+    padding: 14px 10px !important;
+    font-size: 1rem !important;
+    box-sizing: border-box;
+  }
+}
+
+/* Extra-small mobile screens */
+@media (max-width: 360px) {
+  .product-detail {
+    padding: 12px;
+  }
+
+  .detail-info h2 {
+    font-size: 1.4rem !important;
+  }
+
+  .detail-info .detail-price {
+    font-size: 1.5rem !important;
+  }
+
+  .detail-info .btn {
+    font-size: 0.9rem !important;
+  }
+}
+
+
 @media (max-width: 900px) {
   .product-detail {
     grid-template-columns: 1fr;

@@ -19,15 +19,17 @@ const Navbar = () => {
       <div className="navbar-brand">
         <Link to="/">
           <img src="/ShopNestLogo.png" alt="ShopNest" style={{ height: '36px', width: '36px', borderRadius: '8px', objectFit: 'cover' }} />
-          Amit <span style={{ color: '#120b22' }}>Ecommerce</span>
+          <span style={{ color: '#120b22' }}>Ecommerce</span>
         </Link>
       </div>
       <ul className="navbar-links">
         <li><Link to="/shop">Shop</Link></li>
-        <li><Link to="/cart">Cart ({cartItems.length})</Link></li>
+        {user?.role !== 'admin' && (
+          <li><Link to="/cart">Cart ({cartItems.length})</Link></li>
+        )}
         {user ? (
           <>
-            <li><Link to="/profile">Hi, {user.name}</Link></li>
+            {user.role === 'user' && <li><Link to="/profile">Hi, {user.name}</Link></li>}
             {user.role === 'admin' && <li><Link to="/admin">Admin</Link></li>}
             <li><button onClick={handleLogout} className="btn-logout">Logout</button></li>
           </>

@@ -11,6 +11,7 @@ import {
 
 import { AuthContext } from "../context/AuthContext";
 import { clearCart } from "../redux/cartSlice";
+import "../styles/cart.css";
 
 const stripePromise = loadStripe(
   "pk_test_51LvdGASGXtUoYRLzUHg0K0Vo4XcpgyFaW2YTBQEpBnfkcAhSgavP54nB53cGCPIZUyNoPntPmwmE73FJbHyAxlqq00UW0KQyqb",
@@ -154,7 +155,7 @@ const CheckoutForm = () => {
 
   return (
     <div className="checkout-container">
-      <h2>Checkout</h2>
+      <h2 className="checkout-title">Checkout</h2>
 
       <div className="checkout-content">
         <form onSubmit={handlePayment} className="shipping-form">
@@ -218,8 +219,9 @@ const CheckoutForm = () => {
                 hidePostalCode: true,
                 style: {
                   base: {
+                    background: "#c91f90",
                     fontSize: "16px",
-                    color: "#32325d",
+                    color: "#f6f6fa",
                     "::placeholder": {
                       color: "#aab7c4",
                     },
